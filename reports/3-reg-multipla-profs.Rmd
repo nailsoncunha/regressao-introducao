@@ -47,6 +47,12 @@ profs %>%
 ```
 
 ```{r}
+modelo_tres = lm(score ~ age + gender + bty_avg, data = profs)
+tidy(modelo_tres,
+     conf.int = TRUE,
+     conf.level = .95) %>%
+    select(-p.value, -statistic)
 
+glance(modelo_tres)
 ```
 
